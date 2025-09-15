@@ -1,0 +1,146 @@
+/* Using CSS Variables for easy color management */
+:root {
+    --primary-blue: #007bff;
+    --text-color-dark: #333;
+    --text-color-medium: #555;
+    --text-color-light: #777;
+    --bg-color-light: #f4f6f9;
+    --bg-color-white: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-dark);
+}
+
+.portfolio-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 280px;
+    background-color: var(--bg-color-white);
+    padding: 30px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    border-right: 1px solid var(--border-color);
+}
+
+.menu-heading {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--text-color-dark);
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.menu-heading:first-child {
+    margin-top: 0;
+}
+
+.main-nav ul, .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-color-medium);
+    font-weight: 600;
+    display: block;
+    padding: 12px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease;
+}
+
+.nav-links li:first-child a {
+    border-bottom: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.nav-links li a:hover {
+    color: var(--primary-blue);
+}
+
+.get-in-touch p {
+    font-size: 0.9em;
+    color: var(--text-color-light);
+    margin: 5px 0;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1;
+    margin-left: 280px; /* Must match the sidebar width */
+    padding: 20px 50px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+}
+
+.social-links a {
+    color: var(--text-color-dark);
+    font-size: 1.3em;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-blue);
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+    padding-top: 50px;
+}
+
+.profile-text-content {
+    flex: 1;
+}
+
+.profile-name {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.profile-name span {
+    color: var(--primary-blue);
+}
+
+.profile-bio {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--text-color-medium);
+    max-width: 650px;
+}
+
+.profile-image-container {
+    flex-shrink: 0;
+    width: 400px; /* Adjust as needed */
+}
+
+.profile-avatar {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
